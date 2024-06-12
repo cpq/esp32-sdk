@@ -4,7 +4,7 @@ MDK         ?= $(realpath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 ESPUTIL     ?= $(MDK)/esputil/esputil
 CFLAGS      ?= -W -Wall -Wextra -Werror -Wundef -Wshadow -pedantic \
                -Wdouble-promotion -fno-common -Wconversion \
-               -march=rv32imc -mabi=ilp32 \
+               -march=rv32imc_zicsr -mabi=ilp32 \
                -Os -ffunction-sections -fdata-sections \
                -I. -I$(MDK)/$(ARCH) $(EXTRA_CFLAGS)
 LINKFLAGS   ?= -T$(MDK)/$(ARCH)/link.ld -nostdlib -nostartfiles -Wl,--gc-sections $(EXTRA_LINKFLAGS)
